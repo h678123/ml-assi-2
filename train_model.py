@@ -25,7 +25,7 @@ for col in ["model", "engine"]:
     data[col + "_encoded"] = data[col].map(avg_price)
 data = data.drop(columns=["model", "engine"])
 
-# --- Step 6: One-hot encoding for remaining categorical columns ---
+# One-hot encoding for remaining categorical columns
 categorical_cols = ["brand", "fuel_type", "transmission", "accident", "clean_title"]
 data = pd.get_dummies(data, columns=categorical_cols, drop_first=True)
 
